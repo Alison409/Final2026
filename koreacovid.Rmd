@@ -49,10 +49,29 @@ barchartGC(~result + sex,data=kData, type="percent")
 
 ```
 
+The graph suggests that makes are likely to die in comparison to females. 
 
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kData)
+rowPerc(table1)
+colPerc(table1)
+```
+The numerical result shows that out of 100, 64% of makes dead compared to 36% of females, indicating that men are afraid twice as likely to die than women.  
+
 ## Inferential results 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The p value is 0.001, which is less than 0.05. This means that we reject the null hypotheses. We conclude that there is a connection between sex and death from covid19.  
 
 # Conclusions
 
+To answer the question, can we determine that men and women are equally likely to die of covid19 from data collected in South korea through May 2019? 
+
+We reject the null hypothesis and conclude that there is a relationship between sex and death from covid19. That graphical summary shows that men have an increased likelihood of death compared to women. Furthermore the costs ratio says that men die of 2.3 times the rate of women from covid19.
