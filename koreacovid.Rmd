@@ -34,9 +34,21 @@ $H_0$ There is a relationship between gender and death from covid19 in South Kor
 
 $H_0$ There is no relationship between gender and death form covid19 in South Korea in 2019.  
 
+#Methods 
+
+Sex is categorical  
+Result is categorical 
+
 # Data Results
 
 ## Graphical results    
+
+```{r}
+barchartGC(~result + sex,data=kData)
+barchartGC(~result + sex,data=kData, type="percent")
+
+```
+
 
 ## Numerical results
 
